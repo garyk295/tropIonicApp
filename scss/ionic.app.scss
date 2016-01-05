@@ -19,9 +19,9 @@ $dark:                            #444 !default;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 //Override colour
-$royal:                           #6E256E !default;
-$balanced:                        #006666 !default;
-$assertive:                       #8F0047 !default;
+$royal:                           #0000ff !default;
+$balanced:                        #0099ff !default;
+$assertive:                       #99ccff !default;
 
 
 .home-container {
@@ -75,7 +75,7 @@ $assertive:                       #8F0047 !default;
     }
     .container {
         display: table;
-        width: 100%
+        width: 100%;
         height: 100%; /* this will be treated as a Minimum!
                          It will stretch to fit content */
     }

@@ -1,0 +1,73 @@
+<ion-view>
+  <ion-header-bar class="bar bar-header bar-royal">
+    <h1 class="title pull-right">New Order</h1>
+    <button class="button button-clear button-positive" ng-click="">{{balance}}</button>
+    <button class="button button-clear button-positive" ng-click="logout()">Logout</button>
+  </ion-header-bar>
+      <ion-content scroll="false">
+
+        <div class="list card">
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Product
+            </div>
+
+              <select ng-options="item.name for item in products" ng-model="currentEntry.product" >
+               <option value="">Select Product</option>
+             </select>
+          </label>
+
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Unit Cost (£)
+            </div>
+            <select>
+              <option selected>  {{currentEntry.product.cost}}</option>
+            </select>
+          </label>
+
+
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Quantity
+            </div>
+            <select ng-model="currentEntry.quantity" >
+              <option selected>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </label>
+
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Total Cost (£)
+            </div>
+            <select ng-model="currentEntry.totalPrice" >
+              <option selected>  {{currentEntry.product.cost * currentEntry.quantity}}</option>
+            </select>
+          </label>
+
+
+
+  </div>
+
+
+<div class="button-bar" style="position: fixed; bottom: 0em;">
+  <a class="button button-large button-royal" ng-click="mainMenu()">Cancel</a>
+  <a class="button button-large button-assertive" ng-click="placeOrder()">Save</a>
+</div>
+
+  </ion-content>
+
+</ion-view>

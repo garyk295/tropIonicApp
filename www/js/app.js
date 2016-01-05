@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('tropicalDiary', ['ionic', 'tropicalDiary.controllers'])
+angular.module('FundManagmentApp', ['ionic', 'FundManagmentApp.controllers', 'lbServices', 'ui.router'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,14 +31,38 @@ angular.module('tropicalDiary', ['ionic', 'tropicalDiary.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('capture', {
-    url: "/capture",
-    templateUrl: "templates/capture.html",
-    controller: 'CaptureCtrl'
+  .state('placeOrder', {
+    url: "/placeorder",
+    templateUrl: "templates/placeOrder.html",
+    controller: 'PlaceOrderCtrl'
   })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'AuthLoginController'
+  })
+  .state('mainMenu', {
+    url: '/mainMenu',
+    templateUrl: 'templates/mainMenu.html',
+    controller: 'MainMenuController'
+  })
+  .state('logout', {
+    url: '/logout',
+    controller: 'AuthLogoutController'
+  })
+  .state('sign-up', {
+    url: '/sign-up',
+    templateUrl: 'templates/sign-up-form.html',
+    controller: 'SignUpController',
+  })
+  .state('sign-up-success', {
+    url: '/sign-up/success',
+    templateUrl: 'templates/sign-up-success.html'
+  });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app');
+  $urlRouterProvider.otherwise('/login');
 
 });
